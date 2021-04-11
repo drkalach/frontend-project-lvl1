@@ -11,4 +11,7 @@
 
 
 
+[![Lint](https://github.com/drkalach/frontend-project-lvl1/actions/workflows/lint.yml/badge.svg)](https://github.com/drkalach/frontend-project-lvl1/actions/workflows/lint.yml)
+
+
 
