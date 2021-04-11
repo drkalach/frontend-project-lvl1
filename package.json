@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/drkalach/frontend-project-lvl1#readme",
   "dependencies": {
+    "eslint-plugin-jest": "^24.3.4",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
