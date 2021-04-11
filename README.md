@@ -11,6 +11,4 @@
 
 
 
-[![Lint](https://github.com/drkalach/frontend-project-lvl1/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/drkalach/frontend-project-lvl1/actions/workflows/lint.yml)
-
-
+[![Lint](https://github.com/drkalach/frontend-project-lvl1/actions/workflows/blank.yml/badge.svg?branch=main)](https://github.com/drkalach/frontend-project-lvl1/actions/workflows/blank.yml)
