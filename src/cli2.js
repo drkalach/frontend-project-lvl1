@@ -20,11 +20,10 @@ export default (play) => {
     const game = (playerAnswer) => {
         if (playerAnswer === 'yes' && randomNumberIs % 2 === 0 || playerAnswer === 'no' && randomNumberIs % 2 !== 0) {
             return console.log('Correct!');
-             }
-
-        if (playerAnswer === 'yes' && randomNumberIs % 2 !== 0 || playerAnswer === 'no' && randomNumberIs % 2 === 0) {
+             } else if (playerAnswer === 'yes' && randomNumberIs % 2 !== 0 || playerAnswer === 'no' && randomNumberIs % 2 === 0) {
             return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
         }
+        return console.log(`It's wrong answer ;(. Correct answer was 'yes' or 'no'.\nLet's try again, ${userName}!`);
     }
     
     const firstNumber = readlineSync.question(`Question: ${randomNumberIs} \nYour answer: `)
