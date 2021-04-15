@@ -18,20 +18,12 @@ export default (play) => {
     const randomNumberIs = getRandomInRange(-100, 100)
 
     const game = (playerAnswer) => {
-        if (playerAnswer === 'yes' && randomNumberIs % 2 === 0) {
+        if (playerAnswer === 'yes' && randomNumberIs % 2 === 0 || playerAnswer === 'no' && randomNumberIs % 2 !== 0) {
             return console.log('Correct!');
              }
 
-        if (playerAnswer === 'yes' && randomNumberIs % 2 !== 0) {
+        if (playerAnswer === 'yes' && randomNumberIs % 2 !== 0 || playerAnswer === 'no' && randomNumberIs % 2 === 0) {
             return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
-        }
-
-        if (playerAnswer === 'no' && randomNumberIs % 2 === 0) {
-            return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`);
-        }
-
-        if (playerAnswer === 'no' && randomNumberIs % 2 !== 0) {
-            return console.log('Correct!');
         }
     }
     
