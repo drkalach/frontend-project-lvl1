@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import readlineSync from 'readline-sync';
 
 export default (play) => {
@@ -19,12 +21,15 @@ export default (play) => {
   const game = (playerAnswer) => {
     if ((playerAnswer === 'yes' && randomNumberIs % 2 === 0) || (playerAnswer === 'no' && randomNumberIs % 2 !== 0)) {
       return console.log('Correct!');
-    } if ((playerAnswer === 'yes' && randomNumberIs % 2 !== 0) || (playerAnswer === 'no' && randomNumberIs % 2 === 0)) {
+    } if (playerAnswer === 'yes' && randomNumberIs % 2 !== 0) {
       return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
+    }
+    if ((playerAnswer === 'no' && randomNumberIs % 2 === 0)) {
+      return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`);
     }
     return console.log(`It's wrong answer ;(. Correct answer was 'yes' or 'no'.\nLet's try again, ${userName}!`);
   };
 
   const firstNumber = readlineSync.question(`Question: ${randomNumberIs} \nYour answer: `);
-  console.log(game(firstNumber));
+  game(firstNumber);
 };
