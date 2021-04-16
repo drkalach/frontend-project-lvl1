@@ -14,21 +14,59 @@ export default (play) => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    const randomNumberIs = getRandomInRange(-1000, 1000);
+    const firstRandomNumberIs = getRandomInRange(-1000, 1000);
 
-    const game = (playerAnswer) => {
-        if ((playerAnswer === 'yes' && randomNumberIs % 2 === 0) || (playerAnswer === 'no' && randomNumberIs % 2 !== 0)) {
+    const game1 = (playerAnswer) => {
+        if ((playerAnswer === 'yes' && firstRandomNumberIs % 2 === 0) || (playerAnswer === 'no' && firstRandomNumberIs % 2 !== 0)) {
             return console.log('Correct!');
         }
-        if (playerAnswer === 'yes' && randomNumberIs % 2 !== 0) {
+        if (playerAnswer === 'yes' && firstRandomNumberIs % 2 !== 0) {
             return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
         }
-        if (playerAnswer === 'no' && randomNumberIs % 2 === 0) {
+        if (playerAnswer === 'no' && firstRandomNumberIs % 2 === 0) {
+            return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`);
+        }
+
+        return console.log(`It's wrong answer ;(. Correct answer was 'yes' or 'no'.\nLet's try again, ${userName}!`);
+    };
+
+    const firstNumber = readlineSync.question(`Question: ${firstRandomNumberIs} \nYour answer: `);
+    game1(firstNumber);
+
+    const secondRandomNumberIs = getRandomInRange(-1000, 1000);
+
+    const game2 = (playerAnswer) => {
+        if ((playerAnswer === 'yes' && secondRandomNumberIs % 2 === 0) || (playerAnswer === 'no' && secondRandomNumberIs % 2 !== 0)) {
+            return console.log('Correct!');
+        }
+        if (playerAnswer === 'yes' && secondRandomNumberIs % 2 !== 0) {
+            return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
+        }
+        if (playerAnswer === 'no' && secondRandomNumberIs % 2 === 0) {
             return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`);
         }
         return console.log(`It's wrong answer ;(. Correct answer was 'yes' or 'no'.\nLet's try again, ${userName}!`);
     };
 
-    const firstNumber = readlineSync.question(`Question: ${randomNumberIs} \nYour answer: `);
-    game(firstNumber);
+    const secondNumber = readlineSync.question(`Question: ${secondRandomNumberIs} \nYour answer: `);
+    game2(secondNumber);
+
+    const thirdRandomNumberIs = getRandomInRange(-1000, 1000);
+
+    const game3 = (playerAnswer) => {
+        if ((playerAnswer === 'yes' && thirdRandomNumberIs % 2 === 0) || (playerAnswer === 'no' && thirdRandomNumberIs % 2 !== 0)) {
+            return console.log('Correct!');
+        }
+        if (playerAnswer === 'yes' && thirdRandomNumberIs % 2 !== 0) {
+            return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
+        }
+        if (playerAnswer === 'no' && thirdRandomNumberIs % 2 === 0) {
+            return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`);
+        }
+        return console.log(`It's wrong answer ;(. Correct answer was 'yes' or 'no'.\nLet's try again, ${userName}!`);
+    };
+
+    const thirdNumber = readlineSync.question(`Question: ${thirdRandomNumberIs} \nYour answer: `);
+    game3(thirdNumber);
+    console.log(`Congratulations, ${userName}!`);
 };
