@@ -1,7 +1,13 @@
-function getRandomInRange(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+const test = () => {
+  const result = game();
 
-const isEven = (number) => (number % 2 === 0 ? 'Even' : 'Odd');
+  for (let i = 1; i < 3; i++) {
+    game();
+  }
 
-console.log(isEven(27));
+  return result;
+};
+
+test();
+
+console.log(`Congratulations, ${userName}!`);
