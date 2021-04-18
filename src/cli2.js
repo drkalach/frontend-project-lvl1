@@ -14,29 +14,35 @@ export default (play) => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    const RandomNumberIs = getRandomInRange(1, 100);
+    const isEven = (number) => (number % 2 === 0 ? 'Even' : 'Odd');
 
     const game = () => {
+        const randomNumber = getRandomInRange(1, 100);
+
         const game1 = (playerAnswer) => {
-            if ((playerAnswer === 'yes' && RandomNumberIs % 2 === 0) || (playerAnswer === 'no' && RandomNumberIs % 2 !== 0)) {
+            if (playerAnswer === 'yes' && isEven(randomNumber) === 'Even') {
                 return console.log('Correct!');
             }
-            if (playerAnswer === 'yes' && RandomNumberIs % 2 !== 0) {
+
+            if (playerAnswer === 'no' && isEven(randomNumber) === 'Odd') {
+                return console.log('Correct!');
+            }
+            if (playerAnswer === 'yes' && isEven(randomNumber) === 'Odd') {
                 return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
             }
-            if (playerAnswer === 'no' && RandomNumberIs % 2 === 0) {
+            if (playerAnswer === 'no' && isEven(randomNumber) === 'Even') {
                 return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`);
             }
 
             return console.log(`It's wrong answer ;(. Correct answer was 'yes' or 'no'.\nLet's try again, ${userName}!`);
         };
 
-        const Number = readlineSync.question(`Question: ${RandomNumberIs} \nYour answer: `);
+        const Number = readlineSync.question(`Question: ${randomNumber} \nYour answer: `);
         game1(Number);
     };
 
     const test = () => {
-        let result = game();
+        const result = game();
 
         for (let i = 1; i < 3; i++) {
             game();
