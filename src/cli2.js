@@ -20,7 +20,7 @@ export default (play) => {
     for (let i = 0; i < 3; i++) {
       const randomNumber = getRandomInRange(1, 100);
 
-      const game1 = (playerAnswer) => {
+      const game123 = (playerAnswer) => {
         if (playerAnswer === 'yes' && isEven(randomNumber) === 'Even') {
           return console.log('Correct!');
         }
@@ -38,14 +38,14 @@ export default (play) => {
         return console.log(`It's wrong answer ;(. Correct answer was 'yes' or 'no'.\nLet's try again, ${userName}!`);
       };
 
-      const Number = readlineSync.question(`Question: ${randomNumber} \nYour answer: `);
-      game1(Number);
+      const thePlayerChose = readlineSync.question(`Question: ${randomNumber} \nYour answer: `);
+      game123(thePlayerChose);
 
       if (
-        (Number === 'no' && isEven(randomNumber) === 'Even')
-                || (Number === 'yes' && isEven(randomNumber) === 'Odd')
-                || (Number === '')
-                || (Number !== 'yes' && Number !== 'no')
+        (thePlayerChose === 'no' && isEven(randomNumber) === 'Even')
+                || (thePlayerChose === 'yes' && isEven(randomNumber) === 'Odd')
+                || (thePlayerChose === '')
+                || (thePlayerChose !== 'yes' && thePlayerChose !== 'no')
       ) break;
     }
   };
