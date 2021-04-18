@@ -51,4 +51,6 @@ export default (play) => {
     };
 
     test();
+
+    console.log(`Congratulations, ${userName}!`);
 };
