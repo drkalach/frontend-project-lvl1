@@ -7,7 +7,4 @@ const test = () => {
 
   return result;
 };
-
-test();
-
 console.log(`Congratulations, ${userName}!`);
