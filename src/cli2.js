@@ -38,14 +38,14 @@ export default (play) => {
         return console.log(`It's wrong answer ;(. Correct answer was 'yes' or 'no'.\nLet's try again, ${userName}!`);
       };
 
-      const thePlayerChose = readlineSync.question(`Question: ${randomNumber} \nYour answer: `);
-      game123(thePlayerChose);
+      const thePlayerChoice = readlineSync.question(`Question: ${randomNumber} \nYour answer: `);
+      game123(thePlayerChoice);
 
       if (
-        (thePlayerChose === 'no' && isEven(randomNumber) === 'Even')
-                || (thePlayerChose === 'yes' && isEven(randomNumber) === 'Odd')
-                || (thePlayerChose === '')
-                || (thePlayerChose !== 'yes' && thePlayerChose !== 'no')
+        (thePlayerChoice === 'no' && isEven(randomNumber) === 'Even')
+                || (thePlayerChoice === 'yes' && isEven(randomNumber) === 'Odd')
+                || (thePlayerChoice === '')
+                || (thePlayerChoice !== 'yes' && thePlayerChoice !== 'no')
       ) break;
     }
   };
