@@ -44,9 +44,17 @@ export default (play) => {
       if (
         (thePlayerChoice === 'no' && isEven(randomNumber) === 'Even')
                 || (thePlayerChoice === 'yes' && isEven(randomNumber) === 'Odd')
-                || (thePlayerChoice === '')
+                || thePlayerChoice === ''
                 || (thePlayerChoice !== 'yes' && thePlayerChoice !== 'no')
       ) break;
+
+      const test = () => {
+        if (i === 2) {
+          return console.log(`Congratulations, ${userName}!`);
+        }
+      };
+
+      test();
     }
   };
 
