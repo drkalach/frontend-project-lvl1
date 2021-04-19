@@ -48,13 +48,13 @@ export default (play) => {
                 || (thePlayerChoice !== 'yes' && thePlayerChoice !== 'no')
       ) break;
 
-      const test = () => {
+      const congratulations = () => {
         if (i === 2) {
           return console.log(`Congratulations, ${userName}!`);
         }
       };
 
-      test();
+      congratulations();
     }
   };
 
