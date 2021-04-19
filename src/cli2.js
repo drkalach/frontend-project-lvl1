@@ -17,7 +17,7 @@ export default (play) => {
   const isEven = (number) => (number % 2 === 0 ? 'Even' : 'Odd');
 
   const game = () => {
-    for (let i = 0; i < 3; i++) {
+    for (let i = 1; i < 4; i++) {
       const randomNumber = getRandomInRange(1, 100);
 
       const game123 = (playerAnswer) => {
@@ -49,7 +49,7 @@ export default (play) => {
       ) break;
 
       const congratulations = () => {
-        if (i === 2) {
+        if (i === 3) {
           return console.log(`Congratulations, ${userName}!`);
         }
       };
