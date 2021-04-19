@@ -13,6 +13,7 @@ eslint: # Устанавливаем eslint
 # ✔ The config that you've selected requires the following dependencies:
 # ✔ eslint-config-airbnb-base@latest eslint@^5.16.0 || ^6.8.0 || ^7.2.0 eslint-plugin-import@^2.21.2
 # ✔ Would you like to install them now with npm? · Yes
+#
 
 npx eslint: # Обратите внимание на точку, это указание текущей директории и всех поддиректорий
 	npx eslint . 
