@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export default (play) => {
+const play = () => {
   const welcomeString = 'Welcome to the Brain Games!';
   console.log(welcomeString);
 
@@ -17,7 +17,7 @@ export default (play) => {
   const isEven = (number) => (number % 2 === 0 ? 'Even' : 'Odd');
 
   const game = () => {
-    for (let i = 1; i < 4; i++) {
+    for (let i = 1; i < 4; i += 1) {
       const randomNumber = getRandomInRange(1, 100);
 
       const game123 = (playerAnswer) => {
@@ -49,9 +49,11 @@ export default (play) => {
       ) break;
 
       const congratulations = () => {
+        let result;
         if (i === 3) {
-          return console.log(`Congratulations, ${userName}!`);
+          console.log(`Congratulations, ${userName}!`);
         }
+        return result;
       };
 
       congratulations();
@@ -60,3 +62,5 @@ export default (play) => {
 
   game();
 };
+
+export default play;
