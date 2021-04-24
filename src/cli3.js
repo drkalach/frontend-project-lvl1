@@ -23,7 +23,7 @@ const play2 = () => {
 
       const rand = Math.floor(Math.random() * arr.length);
 
-      const calculationResult = (randomNumber1, randomNumber2) => {
+      const calculationResult = () => {
         let result;
         if (arr[rand] === '+') {
           result = randomNumber1 + randomNumber2;
@@ -51,9 +51,10 @@ const play2 = () => {
           return console.log(`It's wrong answer ;(. Correct answer was ${calc}.\nLet's try again, ${userName}!`);
         }
 
-        if (playerAnswer - calc !== 0) {
+        if (playerAnswer - calc > 0) {
           return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${calc}'.\nLet's try again, ${userName}!`);
         }
+        return console.log(`It's wrong answer ;(. Correct answer was ${calc}.\nLet's try again, ${userName}!`);
       };
 
       const thePlayerChoice = readlineSync.question(`Question: ${randomNumber1} ${operator} ${randomNumber2} \nYour answer: `);
