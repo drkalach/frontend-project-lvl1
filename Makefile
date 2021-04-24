@@ -15,4 +15,7 @@ brain-even: # запуск игры "Проверка на чётность"
 	
 brain-calc: # запуск игры "Калькулятор"
 	node ./bin/brain-calc.js
+
+rec: # записать игру 
+	asciinema rec
 	

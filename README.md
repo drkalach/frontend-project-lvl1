@@ -8,5 +8,10 @@
 
 [![Lint](https://github.com/drkalach/frontend-project-lvl1/actions/workflows/blank.yml/badge.svg?branch=main)](https://github.com/drkalach/frontend-project-lvl1/actions/workflows/blank.yml)
 
+### игра случайное число 
 
 https://asciinema.org/a/lgZUKHbCYZx8kOOwowVHLRsDW
+
+### игра калькулятор 
+
+https://asciinema.org/a/kFDF88ZqoaGBWhjh7eaQVgP9T
