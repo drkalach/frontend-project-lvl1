@@ -11,4 +11,4 @@ const greet = () => {
 
 export default greet;
 
-greet();
+
