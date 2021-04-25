@@ -16,8 +16,8 @@ const play2 = () => {
 
   const game = () => {
     for (let i = 1; i < 4; i += 1) {
-      const randomNumber1 = getRandomInRange(10, 20);
-      const randomNumber2 = getRandomInRange(1, 10);
+      const randomNumber1 = getRandomInRange(-10, 20);
+      const randomNumber2 = getRandomInRange(-10, 20);
 
       const arr = ['+', '-', '*'];
 
@@ -49,6 +49,9 @@ const play2 = () => {
 
         if (playerAnswer === '') {
           return console.log(`It's wrong answer ;(. Correct answer was ${calc}.\nLet's try again, ${userName}!`);
+        }
+        if (playerAnswer < 0) {
+          return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${calc}'.\nLet's try again, ${userName}!`);
         }
 
         if (playerAnswer - calc > 0) {

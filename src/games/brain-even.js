@@ -4,8 +4,9 @@ const play = () => {
   const welcomeString = 'Welcome to the Brain Games!';
   console.log(welcomeString);
 
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
+  const userName = readlineSync.question('May I have your name?');
+
+  console.log(`Hi ${userName}!`);
 
   const description = 'Answer "yes" if the number is even, otherwise answer "no".';
   console.log(description);

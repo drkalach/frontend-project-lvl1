@@ -15,3 +15,7 @@ https://asciinema.org/a/lgZUKHbCYZx8kOOwowVHLRsDW
 ### игра калькулятор 
 
 https://asciinema.org/a/kFDF88ZqoaGBWhjh7eaQVgP9T
+
+### игра NOD
+
+https://asciinema.org/a/W4y9eDFKNAVA635isujN0FiO5
