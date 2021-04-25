@@ -15,16 +15,16 @@ const play3 = () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+  function NOD(x, y) {
+    if (y > x) return NOD(Math.abs(y), Math.abs(x));
+    if (!y) return Math.abs(x);
+    return NOD(Math.abs(y), Math.abs(x) % Math.abs(y));
+  }
+
   const game = () => {
     for (let i = 1; i < 4; i += 1) {
       const randomNumber1 = getRandomInRange(-10, 100);
       const randomNumber2 = getRandomInRange(-10, 100);
-
-      function NOD(x, y) {
-        if (y > x) return NOD(Math.abs(y), Math.abs(x));
-        if (!y) return Math.abs(x);
-        return NOD(Math.abs(y), Math.abs(x) % Math.abs(y));
-      }
 
       const calc = NOD(randomNumber1, randomNumber2);
 
