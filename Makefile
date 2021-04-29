@@ -21,6 +21,9 @@ brain-gcd: # запус игры "НОД"
 brain-progression: # запуск игры  "Арифметическая прогрессия"
 	node ./bin/brain-progression.js	
 
+brain-prime: # запуск игры "Простое ли число?"
+	node ./bin/brain-prime.js
+
 rec: # записать игру 
 	asciinema rec
 	

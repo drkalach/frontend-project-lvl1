@@ -23,3 +23,5 @@ https://asciinema.org/a/W4y9eDFKNAVA635isujN0FiO5
 ### игра "Арифметическая прогрессия"
 
 https://asciinema.org/a/D3S4ssU2T5VSdyTpDcwSmsYj9
+
+### Игра "Простое ли число?"
