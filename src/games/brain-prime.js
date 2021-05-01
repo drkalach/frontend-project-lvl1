@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const play4 = () => {
+const play5 = () => {
   const welcomeString = 'Welcome to the Brain Games!';
   console.log(welcomeString);
 
@@ -15,41 +15,52 @@ const play4 = () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  function NOD(x, y) {
-    if (y > x) return NOD(Math.abs(y), Math.abs(x));
-    if (!y) return Math.abs(x);
-    return NOD(Math.abs(y), Math.abs(x) % Math.abs(y));
-  }
+  const isPrime = (n) => {
+    if (n === 1) {
+      return false;
+    }
+    if (n === 2) {
+      return true;
+    }
+    for (let x = 2; x < n; x += 1) {
+      if (n % x === 0) {
+        return false;
+      }
+    }
+    return true;
+  };
 
   const game = () => {
     for (let i = 1; i < 4; i += 1) {
-      const randomNumber1 = getRandomInRange(-10, 100);
-      const randomNumber2 = getRandomInRange(-10, 100);
-
-      const calc = NOD(randomNumber1, randomNumber2);
+      const randomNumber = getRandomInRange(1, 100);
 
       const game123 = (playerAnswer) => {
-        if (playerAnswer - calc === 0) {
+        if (playerAnswer === 'yes' && isPrime(randomNumber) === true) {
           return console.log('Correct!');
         }
 
-        if (playerAnswer - calc > 0) {
-          return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${NOD(randomNumber1, randomNumber2)}'.\nLet's try again, ${userName}!`);
+        if (playerAnswer === 'no' && isPrime(randomNumber) === false) {
+          return console.log('Correct!');
         }
-        if (playerAnswer < 0) {
-          return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${NOD(randomNumber1, randomNumber2)}'.\nLet's try again, ${userName}!`);
+        if (playerAnswer === 'yes' && isPrime(randomNumber) === false) {
+          return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
         }
-        if (playerAnswer === '') {
-          return console.log(`It's wrong answer ;(. Correct answer was ${NOD(randomNumber1, randomNumber2)}.\nLet's try again, ${userName}!`);
+        if (playerAnswer === 'no' && isPrime(randomNumber) === true) {
+          return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`);
         }
 
-        return console.log(`It's wrong answer ;(. Correct answer was ${NOD(randomNumber1, randomNumber2)}.\nLet's try again, ${userName}!`);
+        return console.log(`It's wrong answer ;(. Correct answer was 'yes' or 'no'.\nLet's try again, ${userName}!`);
       };
 
-      const thePlayerChoice = readlineSync.question(`Question: ${randomNumber1} ${randomNumber2} \nYour answer: `);
+      const thePlayerChoice = readlineSync.question(`Question: ${randomNumber} \nYour answer: `);
       game123(thePlayerChoice);
 
-      if (thePlayerChoice - calc !== 0) break;
+      if (
+        (thePlayerChoice === 'no' && isPrime(randomNumber) === true)
+                || (thePlayerChoice === 'yes' && isPrime(randomNumber) === false)
+                || thePlayerChoice === ''
+                || (thePlayerChoice !== 'yes' && thePlayerChoice !== 'no')
+      ) break;
 
       const congratulations = () => {
         let result;
@@ -66,4 +77,4 @@ const play4 = () => {
   game();
 };
 
-export default play4;
+export default play5;

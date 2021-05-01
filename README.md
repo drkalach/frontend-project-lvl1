@@ -25,3 +25,5 @@ https://asciinema.org/a/W4y9eDFKNAVA635isujN0FiO5
 https://asciinema.org/a/D3S4ssU2T5VSdyTpDcwSmsYj9
 
 ### Игра "Простое ли число?"
+
+https://asciinema.org/a/6w4UihJQ0EGtMghjBLDC205kN
