@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import play5 from '../src/games/brain-prime.js';
+// eslint-disable-next-line import/extensions
+import runGame from '../src/games/brain-prime.js';
 
-play5();
+runGame();

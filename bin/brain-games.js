@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import greet from '../src/games/brain-games.js';
+// eslint-disable-next-line import/extensions
+import runGame from '../src/games/brain-games.js';
 
-greet();
+runGame();

@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const play3 = () => {
+const runGame = () => {
   const welcomeString = 'Welcome to the Brain Games!';
   console.log(welcomeString);
 
@@ -66,4 +66,4 @@ const play3 = () => {
   game();
 };
 
-export default play3;
+export default runGame;

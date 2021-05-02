@@ -1,4 +1,6 @@
 #!/usr/bin/env node
-import play from '../src/games/brain-even.js';
 
-play();
+// eslint-disable-next-line import/extensions
+import runGame from '../src/games/brain-even.js';
+
+runGame();

@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const play5 = () => {
+const runGame = () => {
   const welcomeString = 'Welcome to the Brain Games!';
   console.log(welcomeString);
 
@@ -17,17 +17,17 @@ const play5 = () => {
 
   const isPrime = (n) => {
     if (n === 1) {
-      return false;
+      return 'notPrime';
     }
     if (n === 2) {
-      return true;
+      return 'prime';
     }
-    for (let x = 2; x < n; x += 1) {
-      if (n % x === 0) {
-        return false;
+    for (let i = 2; i < n; i += 1) {
+      if (n % i === 0) {
+        return 'notPrime';
       }
     }
-    return true;
+    return 'prime';
   };
 
   const game = () => {
@@ -35,17 +35,17 @@ const play5 = () => {
       const randomNumber = getRandomInRange(1, 100);
 
       const game123 = (playerAnswer) => {
-        if (playerAnswer === 'yes' && isPrime(randomNumber) === true) {
+        if (playerAnswer === 'yes' && isPrime(randomNumber) === 'prime') {
           return console.log('Correct!');
         }
 
-        if (playerAnswer === 'no' && isPrime(randomNumber) === false) {
+        if (playerAnswer === 'no' && isPrime(randomNumber) === 'notPrime') {
           return console.log('Correct!');
         }
-        if (playerAnswer === 'yes' && isPrime(randomNumber) === false) {
+        if (playerAnswer === 'yes' && isPrime(randomNumber) === 'notPrime') {
           return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
         }
-        if (playerAnswer === 'no' && isPrime(randomNumber) === true) {
+        if (playerAnswer === 'no' && isPrime(randomNumber) === 'prime') {
           return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`);
         }
 
@@ -56,8 +56,8 @@ const play5 = () => {
       game123(thePlayerChoice);
 
       if (
-        (thePlayerChoice === 'no' && isPrime(randomNumber) === true)
-                || (thePlayerChoice === 'yes' && isPrime(randomNumber) === false)
+        (thePlayerChoice === 'no' && isPrime(randomNumber) === 'prime')
+                || (thePlayerChoice === 'yes' && isPrime(randomNumber) === 'notPrime')
                 || thePlayerChoice === ''
                 || (thePlayerChoice !== 'yes' && thePlayerChoice !== 'no')
       ) break;
@@ -77,4 +77,4 @@ const play5 = () => {
   game();
 };
 
-export default play5;
+export default runGame;

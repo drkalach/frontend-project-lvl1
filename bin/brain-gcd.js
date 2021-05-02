@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import play3 from '../src/games/brain-gcd.js';
+// eslint-disable-next-line import/extensions
+import runGame from '../src/games/brain-gcd.js';
 
-play3();
+runGame();

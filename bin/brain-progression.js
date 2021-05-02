@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import play4 from '../src/games/brain-progression.js';
+// eslint-disable-next-line import/extensions
+import runGame from '../src/games/brain-progression.js';
 
-play4();
+runGame();
