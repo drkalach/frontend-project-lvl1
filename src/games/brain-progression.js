@@ -5,7 +5,6 @@ const runGame = () => {
   console.log(welcomeString);
 
   const userName = readlineSync.question('May I have your name? ');
-
   console.log(`Hi ${userName}!`);
 
   const description = 'What number is missing in the progression?';
