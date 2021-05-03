@@ -1,12 +1,9 @@
 import readlineSync from 'readline-sync';
 
+// eslint-disable-next-line import/extensions
+import greeting from './brain-games.js';
+
 const runGame = () => {
-  const welcomeString = 'Welcome to the Brain Games!';
-  console.log(welcomeString);
-
-  const userName = readlineSync.question('May I have your name?');
-  console.log(`Hi ${userName}!`);
-
   const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   console.log(description);
 
@@ -42,13 +39,13 @@ const runGame = () => {
           return console.log('Correct!');
         }
         if (playerAnswer === 'yes' && isPrime(randomNumber) === 'notPrime') {
-          return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
+          return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${greeting}!`);
         }
         if (playerAnswer === 'no' && isPrime(randomNumber) === 'prime') {
-          return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`);
+          return console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${greeting}!`);
         }
 
-        return console.log(`It's wrong answer ;(. Correct answer was 'yes' or 'no'.\nLet's try again, ${userName}!`);
+        return console.log(`It's wrong answer ;(. Correct answer was 'yes' or 'no'.\nLet's try again, ${greeting}!`);
       };
 
       const thePlayerChoice = readlineSync.question(`Question: ${randomNumber} \nYour answer: `);
@@ -64,7 +61,7 @@ const runGame = () => {
       const congratulations = () => {
         let result;
         if (i === 3) {
-          console.log(`Congratulations, ${userName}!`);
+          console.log(`Congratulations, ${greeting}!`);
         }
         return result;
       };

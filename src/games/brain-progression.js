@@ -1,12 +1,9 @@
 import readlineSync from 'readline-sync';
 
+// eslint-disable-next-line import/extensions
+import greeting from './brain-games.js';
+
 const runGame = () => {
-  const welcomeString = 'Welcome to the Brain Games!';
-  console.log(welcomeString);
-
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hi ${userName}!`);
-
   const description = 'What number is missing in the progression?';
   console.log(description);
 
@@ -28,16 +25,16 @@ const runGame = () => {
         }
 
         if (playerAnswer - ((randomPlacementOfMissingCharacters - 1) * d) > 0) {
-          return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${a1 + (randomPlacementOfMissingCharacters - 1) * d}'.\nLet's try again, ${userName}!`);
+          return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${a1 + (randomPlacementOfMissingCharacters - 1) * d}'.\nLet's try again, ${greeting}!`);
         }
         if (playerAnswer < 0) {
-          return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${a1 + (randomPlacementOfMissingCharacters - 1) * d}'.\nLet's try again, ${userName}!`);
+          return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${a1 + (randomPlacementOfMissingCharacters - 1) * d}'.\nLet's try again, ${greeting}!`);
         }
         if (playerAnswer === '') {
-          return console.log(`It's wrong answer ;(. Correct answer was ${a1 + (randomPlacementOfMissingCharacters - 1) * d}.\nLet's try again, ${userName}!`);
+          return console.log(`It's wrong answer ;(. Correct answer was ${a1 + (randomPlacementOfMissingCharacters - 1) * d}.\nLet's try again, ${greeting}!`);
         }
 
-        return console.log(`It's wrong answer ;(. Correct answer was ${a1 + (randomPlacementOfMissingCharacters - 1) * d}.\nLet's try again, ${userName}!`);
+        return console.log(`It's wrong answer ;(. Correct answer was ${a1 + (randomPlacementOfMissingCharacters - 1) * d}.\nLet's try again, ${greeting}!`);
       };
 
       const thePlayerChoice = readlineSync.question(`Question: ${myNewString}\nYour answer: `);
@@ -48,7 +45,7 @@ const runGame = () => {
       const congratulations = () => {
         let result;
         if (i === 3) {
-          console.log(`Congratulations, ${userName}!`);
+          console.log(`Congratulations, ${greeting}!`);
         }
         return result;
       };

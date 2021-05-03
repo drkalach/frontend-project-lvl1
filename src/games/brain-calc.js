@@ -1,18 +1,12 @@
 import readlineSync from 'readline-sync';
 
+// eslint-disable-next-line import/extensions
+import { description, getRandomInRange } from '../index.js';
+// eslint-disable-next-line import/extensions
+import greeting from './brain-games.js';
+
 const runGame = () => {
-  const welcomeString = 'Welcome to the Brain Games!';
-  console.log(welcomeString);
-
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-
-  const description = 'What is the result of the expression?';
-  console.log(description);
-
-  function getRandomInRange(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  description('What is the result of the expression?');
 
   const game = () => {
     for (let i = 1; i < 4; i += 1) {
@@ -48,16 +42,16 @@ const runGame = () => {
         }
 
         if (playerAnswer === '') {
-          return console.log(`It's wrong answer ;(. Correct answer was ${calc}.\nLet's try again, ${userName}!`);
+          return console.log(`It's wrong answer ;(. Correct answer was ${calc}.\nLet's try again, ${greeting}!`);
         }
         if (playerAnswer < 0) {
-          return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${calc}'.\nLet's try again, ${userName}!`);
+          return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${calc}'.\nLet's try again, ${greeting}!`);
         }
 
         if (playerAnswer - calc > 0) {
-          return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${calc}'.\nLet's try again, ${userName}!`);
+          return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${calc}'.\nLet's try again, ${greeting}!`);
         }
-        return console.log(`It's wrong answer ;(. Correct answer was ${calc}.\nLet's try again, ${userName}!`);
+        return console.log(`It's wrong answer ;(. Correct answer was ${calc}.\nLet's try again, ${greeting}!`);
       };
 
       const thePlayerChoice = readlineSync.question(`Question: ${randomNumber1} ${operator} ${randomNumber2} \nYour answer: `);
@@ -68,7 +62,7 @@ const runGame = () => {
       const congratulations = () => {
         let result;
         if (i === 3) {
-          console.log(`Congratulations, ${userName}!`);
+          console.log(`Congratulations, ${greeting}!`);
         }
         return result;
       };
