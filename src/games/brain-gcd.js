@@ -1,23 +1,20 @@
 import readlineSync from 'readline-sync';
 
 // eslint-disable-next-line import/extensions
+import { description, getRandomInRange } from '../index.js';
+// eslint-disable-next-line import/extensions
 import greeting from './brain-games.js';
 
 const runGame = () => {
-  const description = 'Find the greatest common divisor of given numbers.';
-  console.log(description);
-
-  function getRandomInRange(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  function NOD(x, y) {
-    if (y > x) return NOD(Math.abs(y), Math.abs(x));
-    if (!y) return Math.abs(x);
-    return NOD(Math.abs(y), Math.abs(x) % Math.abs(y));
-  }
+  description('Find the greatest common divisor of given numbers.');
 
   const game = () => {
+    function NOD(x, y) {
+      if (y > x) return NOD(Math.abs(y), Math.abs(x));
+      if (!y) return Math.abs(x);
+      return NOD(Math.abs(y), Math.abs(x) % Math.abs(y));
+    }
+
     for (let i = 1; i < 4; i += 1) {
       const randomNumber1 = getRandomInRange(-10, 100);
       const randomNumber2 = getRandomInRange(-10, 100);

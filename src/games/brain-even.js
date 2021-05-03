@@ -1,21 +1,18 @@
 import readlineSync from 'readline-sync';
 
 // eslint-disable-next-line import/extensions
+import { description, getRandomInRange } from '../index.js';
+// eslint-disable-next-line import/extensions
 import greeting from './brain-games.js';
 
 const runGame = () => {
-  const description = 'Answer "yes" if the number is even, otherwise answer "no".';
-  console.log(description);
-
-  function getRandomInRange(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  const isEven = (number) => (number % 2 === 0 ? 'Even' : 'Odd');
+  description('Answer "yes" if the number is even, otherwise answer "no".');
 
   const game = () => {
     for (let i = 1; i < 4; i += 1) {
       const randomNumber = getRandomInRange(1, 100);
+
+      const isEven = (number) => (number % 2 === 0 ? 'Even' : 'Odd');
 
       const game123 = (playerAnswer) => {
         if (playerAnswer === 'yes' && isEven(randomNumber) === 'Even') {

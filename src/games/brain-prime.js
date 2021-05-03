@@ -1,32 +1,29 @@
 import readlineSync from 'readline-sync';
 
 // eslint-disable-next-line import/extensions
+import { description, getRandomInRange } from '../index.js';
+// eslint-disable-next-line import/extensions
 import greeting from './brain-games.js';
 
 const runGame = () => {
-  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  console.log(description);
-
-  function getRandomInRange(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  const isPrime = (n) => {
-    if (n === 1) {
-      return 'notPrime';
-    }
-    if (n === 2) {
-      return 'prime';
-    }
-    for (let i = 2; i < n; i += 1) {
-      if (n % i === 0) {
-        return 'notPrime';
-      }
-    }
-    return 'prime';
-  };
+  description('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   const game = () => {
+    const isPrime = (n) => {
+      if (n === 1) {
+        return 'notPrime';
+      }
+      if (n === 2) {
+        return 'prime';
+      }
+      for (let i = 2; i < n; i += 1) {
+        if (n % i === 0) {
+          return 'notPrime';
+        }
+      }
+      return 'prime';
+    };
+
     for (let i = 1; i < 4; i += 1) {
       const randomNumber = getRandomInRange(1, 100);
 

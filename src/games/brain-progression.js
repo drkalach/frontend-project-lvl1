@@ -1,15 +1,12 @@
 import readlineSync from 'readline-sync';
 
 // eslint-disable-next-line import/extensions
+import { description, getRandomInRange } from '../index.js';
+// eslint-disable-next-line import/extensions
 import greeting from './brain-games.js';
 
 const runGame = () => {
-  const description = 'What number is missing in the progression?';
-  console.log(description);
-
-  function getRandomInRange(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  description('What number is missing in the progression?');
 
   const game = () => {
     for (let i = 1; i < 4; i += 1) {
