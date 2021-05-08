@@ -45,16 +45,22 @@ const runGame = () => {
           return console.log(`It's wrong answer ;(. Correct answer was ${calc}.\nLet's try again, ${greeting}!`);
         }
         if (playerAnswer < 0) {
-          return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${calc}'.\nLet's try again, ${greeting}!`);
+          return console.log(
+            `'${playerAnswer}' is wrong answer ;(. Correct answer was '${calc}'.\nLet's try again, ${greeting}!`,
+          );
         }
 
         if (playerAnswer - calc > 0) {
-          return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${calc}'.\nLet's try again, ${greeting}!`);
+          return console.log(
+            `'${playerAnswer}' is wrong answer ;(. Correct answer was '${calc}'.\nLet's try again, ${greeting}!`,
+          );
         }
         return console.log(`It's wrong answer ;(. Correct answer was ${calc}.\nLet's try again, ${greeting}!`);
       };
 
-      const thePlayerChoice = readlineSync.question(`Question: ${randomNumber1} ${operator} ${randomNumber2} \nYour answer: `);
+      const thePlayerChoice = readlineSync.question(
+        `Question: ${randomNumber1} ${operator} ${randomNumber2} \nYour answer: `,
+      );
       game123(thePlayerChoice);
 
       if (thePlayerChoice - calc !== 0) break;

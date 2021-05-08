@@ -27,16 +27,36 @@ const runGame = () => {
         }
 
         if (playerAnswer - calc > 0) {
-          return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${NOD(randomNumber1, randomNumber2)}'.\nLet's try again, ${greeting}!`);
+          return console.log(
+            `'${playerAnswer}' is wrong answer ;(. Correct answer was '${NOD(
+              randomNumber1,
+              randomNumber2,
+            )}'.\nLet's try again, ${greeting}!`,
+          );
         }
         if (playerAnswer < 0) {
-          return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${NOD(randomNumber1, randomNumber2)}'.\nLet's try again, ${greeting}!`);
+          return console.log(
+            `'${playerAnswer}' is wrong answer ;(. Correct answer was '${NOD(
+              randomNumber1,
+              randomNumber2,
+            )}'.\nLet's try again, ${greeting}!`,
+          );
         }
         if (playerAnswer === '') {
-          return console.log(`It's wrong answer ;(. Correct answer was ${NOD(randomNumber1, randomNumber2)}.\nLet's try again, ${greeting}!`);
+          return console.log(
+            `It's wrong answer ;(. Correct answer was ${NOD(
+              randomNumber1,
+              randomNumber2,
+            )}.\nLet's try again, ${greeting}!`,
+          );
         }
 
-        return console.log(`It's wrong answer ;(. Correct answer was ${NOD(randomNumber1, randomNumber2)}.\nLet's try again, ${greeting}!`);
+        return console.log(
+          `It's wrong answer ;(. Correct answer was ${NOD(
+            randomNumber1,
+            randomNumber2,
+          )}.\nLet's try again, ${greeting}!`,
+        );
       };
 
       const thePlayerChoice = readlineSync.question(`Question: ${randomNumber1} ${randomNumber2} \nYour answer: `);
