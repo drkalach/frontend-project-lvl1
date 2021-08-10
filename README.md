@@ -8,22 +8,22 @@
 
 [![Lint](https://github.com/drkalach/frontend-project-lvl1/actions/workflows/blank.yml/badge.svg?branch=main)](https://github.com/drkalach/frontend-project-lvl1/actions/workflows/blank.yml)
 
-### игра случайное число
-
-https://asciinema.org/a/lgZUKHbCYZx8kOOwowVHLRsDW
-
-### игра калькулятор
-
-https://asciinema.org/a/kFDF88ZqoaGBWhjh7eaQVgP9T
-
-### игра NOD
-
-https://asciinema.org/a/W4y9eDFKNAVA635isujN0FiO5
-
-### игра "Арифметическая прогрессия"
-
-https://asciinema.org/a/D3S4ssU2T5VSdyTpDcwSmsYj9
-
 ### Игра "Простое ли число?"
 
-https://asciinema.org/a/6w4UihJQ0EGtMghjBLDC205kN
+[![asciicast](https://asciinema.org/a/429726.svg)](https://asciinema.org/a/429726)
+
+### Игра: "Калькулятор"
+
+[![asciicast](https://asciinema.org/a/429723.svg)](https://asciinema.org/a/429723)
+
+### Игра "НОД"
+
+[![asciicast](https://asciinema.org/a/429724.svg)](https://asciinema.org/a/429724)
+
+### Игра "Арифметическая прогрессия"
+
+[![asciicast](https://asciinema.org/a/429725.svg)](https://asciinema.org/a/429725)
+
+### Игра: "Проверка на чётность"
+
+[![asciicast](https://asciinema.org/a/429722.svg)](https://asciinema.org/a/429722)
