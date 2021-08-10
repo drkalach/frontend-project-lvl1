@@ -27,6 +27,6 @@ brain-progression: # Игра "Арифметическая прогрессия
 brain-prime: # Игра "Простое ли число?"
 	node ./bin/brain-prime.js
 
-rec: # записать игру 
+rec: # записать игру .
 	asciinema rec
 	
